@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Lingüística y Comunicación Digital - LOSSINHIPO</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+    :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #34495e;
+        --text: #2c3e50;
+        --bg: #ffffff;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text);
+        background: var(--light);
+    }
+
+    header {
+        background: linear-gradient(135deg, var(--primary), var(--dark));
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    header .team-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #3498db;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        margin-bottom: 0.5rem;
+    }
+
+    header p {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+
+    nav {
+        position: fixed;
+        left: 0;
+        top: 180px;
+        width: 280px;
+        height: calc(100vh - 180px);
+        background: white;
+        padding: 2rem 1rem;
+        overflow-y: auto;
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+    }
+
+    nav h3 {
+        color: var(--primary);
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        list-style: none;
+    }
+
+    nav li {
+        margin-bottom: 0.5rem;
+    }
+
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+        display: block;
+        padding: 0.5rem;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        font-size: 0.95rem;
+    }
+
+    nav a:hover {
+        background: var(--secondary);
+        color: white;
+        transform: translateX(5px);
+    }
+
+    .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 190px;
+        left: 20px;
+        z-index: 101;
+        background: var(--secondary);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+
+    main {
+        margin-left: 280px;
+        padding: 2rem;
+        max-width: 900px;
+    }
+
+    section {
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h2 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+        border-bottom: 3px solid var(--secondary);
+        padding-bottom: 0.5rem;
+    }
+
+    h3 {
+        color: var(--secondary);
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        color: var(--dark);
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+
+    .highlight {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .info-box {
+        background: #e3f2fd;
+        border-left: 4px solid var(--secondary);
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+    }
+
+    .example-box {
+        background: #fff3e0;
+        border-left: 4px solid #ff9800;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+    }
+
+    .warning-box {
+        background: #ffebee;
+        border-left: 4px solid #f44336;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+    }
+
+    .reference-box {
+        background: #f5f5f5;
+        border-left: 4px solid #4caf50;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        border-radius: 5px;
+        font-size: 0.95rem;
+    }
+
+    .accordion {
+        margin: 1rem 0;
+    }
+
+    .accordion-item {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin-bottom: 0.5rem;
+        overflow: hidden;
+    }
+
+    .accordion-header {
+        background: var(--secondary);
+        color: white;
+        padding: 1rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s ease;
+    }
+
+    .accordion-header:hover {
+        background: #2980b9;
+    }
+
+    .accordion-header::after {
+        content: '▼';
+        transition: transform 0.3s ease;
+    }
+
+    .accordion-header.active::after {
+        transform: rotate(180deg);
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: white;
+    }
+
+    .accordion-content.active {
+        max-height: 2000px;
+        padding: 1rem;
+    }
+
+    ul, ol {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    .progress-indicator {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--secondary);
+        color: white;
+        padding: 1rem;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .quote {
+        border-left: 4px solid var(--accent);
+        padding-left: 1rem;
+        margin: 1rem 0;
+        font-style: italic;
+        color: #555;
+    }
+
+    .social-media-tip {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin: 1.5rem 0;
+        box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+    }
+
+    .social-media-tip h4 {
+        color: white;
+        margin-top: 0;
+    }
+
+    .team-credits {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        margin: 2rem 0;
+    }
+
+    .team-credits h3 {
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .team-member {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: 5px;
+        margin: 0.5rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+
+        nav {
+            transform: translateX(-100%);
+        }
+
+        nav.active {
+            transform: translateX(0);
+        }
+
+        main {
+            margin-left: 0;
+            padding: 1rem;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        header .team-name {
+            font-size: 1.2rem;
+        }
+
+        section {
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+
+</head>
+<body>
+    <header>
+        <h1>📚 Manual de Lingüística y Comunicación Digital</h1>
+        <div class="team-name">LOSSINHIPO</div>
+        <p>Aplicaciones prácticas para la era digital</p>
+    </header>
+
+
+<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+<nav id="sidebar">
+    <h3>Contenido</h3>
+    <ul>
+        <li><a href="#introduccion" onclick="closeMenu()">Introducción</a></li>
+        <li><a href="#capitulo1" onclick="closeMenu()">Cap. 1: El Estilo como Marca Digital</a></li>
+        <li><a href="#capitulo2" onclick="closeMenu()">Cap. 2: Errores Comunes</a></li>
+        <li><a href="#mayusculas" onclick="closeMenu()">• Uso de Mayúsculas</a></li>
+        <li><a href="#puntuacion" onclick="closeMenu()">• Signos de Puntuación</a></li>
+        <li><a href="#abreviaturas" onclick="closeMenu()">• Abreviaturas y Neologismos</a></li>
+        <li><a href="#muletillas" onclick="closeMenu()">• Muletillas Lingüísticas</a></li>
+        <li><a href="#equipo" onclick="closeMenu()">Equipo</a></li>
+        <li><a href="#referencias" onclick="closeMenu()">Referencias</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="introduccion">
+        <h2>🌐 Introducción</h2>
+        
+        <div class="highlight">
+            <h3>Sobre este Manual</h3>
+            <p>En este manual nos enfocamos en cómo ha cambiado el estilo del lenguaje en las eras digitales actuales. Además, descubrir las nuevas formas en que han cambiado la forma de comunicarnos gracias a estas nuevas eras digitales. Lo que nos da lugar a una nueva forma de dialectos en la comunicación.</p>
+        </div>
+
+        <p>En un mundo como el de las redes sociales existen demasiadas formas de expresarse, encontramos una gran variedad de actitudes y personalidades dentro de ellas. Al haber una cantidad de personalidades diferentes en las plataformas digitales, la gente va adoptando una personalidad basada en ellas y de alguna manera nos vamos olvidando de ser nosotros mismos.</p>
+
+        <div class="info-box">
+            <h4>🎯 Objetivo del Manual</h4>
+            <p>Para dejarlo claro, en este manual buscamos darte unas herramientas o ayudas para mejorar tu estilo o contenido y la forma de comunicarte dentro de las redes sociales para ser efectivos.</p>
+        </div>
+    </section>
+
+    <section id="capitulo1">
+        <h2>✍️ Capítulo 1: El Estilo como Marca Digital</h2>
+        
+        <h3>¿Qué es Estilo?</h3>
+        <p>Seguramente alguna vez en tu vida hayas escuchado sobre la palabra estilo. Tal vez nunca te has dado cuenta, pero el estilo puede formar parte de tus conversaciones.</p>
+
+        <div class="info-box">
+            <h4>Ejemplos de Estilos en tu Vida</h4>
+            <p>La mayoría de nosotros seguramente tenemos ya algunos estilos identificados, por ejemplo:</p>
+            <ul>
+                <li>La forma de vestir</li>
+                <li>Tu música preferida</li>
+                <li>Tu forma de estudiar o hacer la tarea</li>
+            </ul>
+        </div>
+
+        <p>Con esto podemos deducir que el estilo es la forma en que nos expresamos al momento de hablar o en la forma en la que escribimos algún texto para darnos a entender de la mejor manera para que nuestro receptor, que en este caso serían nuestros seguidores, nos puedan entender.</p>
+
+        <div class="social-media-tip">
+            <h4>📱 Aplicación en Redes Sociales</h4>
+            <p>Así podemos deducir que para nuestras redes sociales podemos emplear el estilo para seguir enganchando a nuestros seguidores con la manera en la que hablamos, esto en el caso de que estemos hablando en un video. Y si fuera el caso de ser una publicación, se podría emplear en el estilo de fuente o el color y, claro, el tema que queramos exponer en la publicación.</p>
+        </div>
+
+        <h3>Tipos de Estilo</h3>
+        
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Estilo Formal</div>
+                <div class="accordion-content">
+                    <p>Es caracterizado por cuidar el lenguaje y usar sofisticadamente el vocabulario.</p>
+                    <p>Suelen encontrarse en contextos educativos, legales y oficiales donde predomina este tipo de lenguaje.</p>
+                    <div class="example-box">
+                        <strong>Ejemplo:</strong> Documentos académicos, comunicados oficiales, presentaciones profesionales.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Estilo Informal</div>
+                <div class="accordion-content">
+                    <p>En este tipo de estilo suele utilizarse un lenguaje cotidiano o coloquial, al igual de ser un lenguaje relajado. Este tipo de estilo suele utilizarse en situaciones cotidianas como escribir una carta o grabar un video.</p>
+                    <div class="example-box">
+                        <strong>Uso en redes:</strong> Stories de Instagram, tweets casuales, videos personales.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Estilo Creativo</div>
+                <div class="accordion-content">
+                    <p>Este estilo se caracteriza por romper lo tradicional y tratar de ser creativo. Al utilizar este tipo de estilo somos libres de expresar emociones y sentimientos, que a diferencia del estilo formal, seguramente no se puedan expresar.</p>
+                    <div class="example-box">
+                        <strong>Uso en redes:</strong> Contenido artístico, publicaciones con diseño original, storytelling creativo.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Estilo Corporativo</div>
+                <div class="accordion-content">
+                    <p>Se caracteriza por utilizar la escritura para comunicar información institucional, administrativa y estratégica de manera clara y persuasiva. Además de utilizar la coherencia e intensidad para interpretar a la voz de la empresa.</p>
+                    <div class="example-box">
+                        <strong>Uso en redes:</strong> LinkedIn posts, comunicados de empresa, contenido B2B.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="capitulo2">
+        <h2>⚠️ Capítulo 2: Diagnóstico - Errores Comunes y Estrategias de Corrección</h2>
+        <p>En este capítulo exploraremos los errores más frecuentes en la comunicación digital y cómo corregirlos para mantener una presencia profesional y efectiva en redes sociales.</p>
+    </section>
+
+    <section id="mayusculas">
+        <h3>🔤 Uso Indebido de Mayúsculas</h3>
+        
+        <div class="warning-box">
+            <h4>⚠️ Regla de Oro</h4>
+            <p><strong>Escribir en mayúsculas en la red equivale a gritar.</strong> Utilizar letras mayúsculas en exceso puede ser interpretado como una falta de cortesía y respeto hacia los demás.</p>
+        </div>
+
+        <p>En muchos países, el uso de mayúsculas en ciertos contextos puede ser considerado como una falta de respeto o incluso como una amenaza.</p>
+
+        <div class="info-box">
+            <h4>Consecuencias Legales y Éticas</h4>
+            <p>Recuerda que el respeto en línea es importante tanto a nivel legal como ético. El uso adecuado del lenguaje y la comunicación respetuosa contribuyen a mantener un entorno virtual seguro y armonioso.</p>
+        </div>
+
+        <div class="social-media-tip">
+            <h4>💡 Recomendación para Redes Sociales</h4>
+            <p>Evitar escribir en mayúsculas en la red es importante desde el punto de vista legal para evitar conflictos, respetar las normas y leyes establecidas y mantener una comunicación efectiva en línea.</p>
+        </div>
+
+        <div class="reference-box">
+            Admin. (2024, 28 enero). <em>La importancia de no escribir en mayúsculas en la red: consejos legales para evitar problemas</em>. Información Legal. https://todoinfolegal.com/escribir-en-mayusculas-en-la-red-equivale-a/
+        </div>
+    </section>
+
+    <section id="puntuacion">
+        <h3>📝 Signos de Puntuación en el Contexto Digital</h3>
+        
+        <p>Los símbolos de puntuación son una parte esencial de la escritura, ya que nos permiten darle sentido y claridad a nuestras palabras. Sin embargo, en las redes sociales, donde la brevedad y la rapidez son fundamentales, es común ver cómo se omiten o se utilizan de manera inadecuada.</p>
+
+        <div class="highlight">
+            <h4>Importancia de la Puntuación</h4>
+            <p>Los símbolos de puntuación son un elemento clave para transmitir emociones y entonación en la comunicación escrita, especialmente en las redes sociales.</p>
+        </div>
+
+        <p>No importa si estás publicando en Facebook, Twitter, Instagram o cualquier otra plataforma, conocer y aplicar las reglas básicas de la puntuación te ayudará a comunicar tus ideas de manera efectiva y a transmitir el tono y la intención correcta.</p>
+
+        <p>Los símbolos de puntuación añaden claridad y significado a nuestras palabras, evitando malentendidos y permitiendo que nuestras interacciones sean más efectivas.</p>
+
+        <h4>Símbolos de Puntuación para Expresar Emociones</h4>
+        <p>En las redes sociales, los emoticonos y emojis se han convertido en una forma popular de complementar nuestras expresiones escritas. Pero, ¿sabías que también podemos utilizar símbolos de puntuación para expresar emociones?</p>
+
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">Signos de Admiración (! !!)</div>
+                <div class="accordion-content">
+                    <p>Se utilizan para enfatizar entusiasmo, sorpresa o alegría en nuestra escritura.</p>
+                    <div class="example-box">
+                        <strong>Ejemplos:</strong><br>
+                        • "¡Qué sorpresa!"<br>
+                        • "¡Estoy emocionado!"
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Signos de Interrogación (¿?)</div>
+                <div class="accordion-content">
+                    <p>El signo de interrogación «¿?» y su versión doble «¿?» son esenciales para expresar preguntas en línea.</p>
+                    <div class="example-box">
+                        <strong>Uso correcto:</strong> Siempre abrir y cerrar las preguntas con los signos correspondientes en español.
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Signos de Exclamación (! !!)</div>
+                <div class="accordion-content">
+                    <p>Nos permiten mostrar entusiasmo o indignación.</p>
+                    <div class="example-box">
+                        <strong>Ejemplos:</strong><br>
+                        • "¡Qué genial!"<br>
+                        • "¡No puedo creerlo!!"
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Puntos Suspensivos (…)</div>
+                <div class="accordion-content">
+                    <p>Pueden indicar una pausa dramática, anticipación o insinuar algo sin decirlo explícitamente. Esto crea una sensación de intriga en tus publicaciones.</p>
+                    <div class="example-box">
+                        <strong>Ejemplo:</strong> "Mañana tengo una sorpresa para ustedes..."
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">Caracteres Especiales (Alt-Codes)</div>
+                <div class="accordion-content">
+                    <p>Además de los símbolos de puntuación tradicionales, también podemos utilizar los «Alt-Codes» en algunas plataformas para insertar caracteres especiales como corazones (&lt;3) o estrellas (*). Explora la posibilidad de utilizar estos símbolos para añadir un toque único a tus publicaciones.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <h4>⚠️ Importante</h4>
+            <p>Recuerda que aunque los símbolos de puntuación pueden ser divertidos y expresivos, es importante utilizarlos con moderación y de manera coherente para evitar confusiones.</p>
+        </div>
+
+        <div class="reference-box">
+            Iglesias, L. (2023, 28 octubre). <em>Uso de símbolos de puntuación en redes sociales</em>. Seguidores Online. https://seguidores.online/uso-de-simbolos-de-puntuacion-en-redes-sociales/
+        </div>
+    </section>
+
+    <section id="abreviaturas">
+        <h3>🔤 Abuso de Abreviaturas y Neologismos</h3>
+        
+        <h4>Abreviaturas en Redes Sociales</h4>
+        <p>El uso excesivo de abreviaturas en redes sociales puede generar desconfianza y afectar la calidad de la comunicación. Un estudio de la Universidad de Stanford reveló que el uso de abreviaturas puede hacer que el emisor parezca menos sincero y desmotivar al receptor.</p>
+
+        <div class="warning-box">
+            <h4>📊 Hallazgo de Investigación</h4>
+            <p>La investigación concluyó que la percepción de poco esfuerzo es la principal razón por la que los mensajes se consideran menos sinceros.</p>
+        </div>
+
+        <div class="info-box">
+            <h4>💡 Recomendación</h4>
+            <p>Es importante utilizar abreviaturas con moderación y considerar el contexto y la audiencia al decidir si utilizar o no abreviaturas en redes sociales.</p>
+        </div>
+
+        <div class="reference-box">
+            <em>Abreviaturas en redes sociales ¿útiles o confusas?</em> (s.f.). abreviatura.es. https://abreviatura.es/blog/abreviaturas-en-redes-sociales-utiles-o-confusas
+        </div>
+
+        <h4>Neologismos Digitales</h4>
+        <p>El español, al igual que todas las lenguas vivas, está en constante evolución. La irrupción de las redes sociales en la vida cotidiana ha acelerado la creación y adopción de neologismos (palabras nuevas o nuevos usos de palabras existentes) que surgen en el entorno digital y rápidamente se extienden entre los hablantes.</p>
+
+        <div class="highlight">
+            <h4>🧪 Laboratorio Lingüístico</h4>
+            <p>Estos neologismos nacidos en Internet representan un laboratorio lingüístico donde el idioma se adapta para nombrar nuevas realidades y experiencias de la era digital.</p>
+        </div>
+
+        <div class="warning-box">
+            <h4>⚠️ Precaución</h4>
+            <p>No debemos abusar de estos neologismos porque al momento de utilizarlos de manera excesiva podemos llegar a confundir o incluso agobiar a una persona que no esté enterada de por qué está esa palabra o cuál es su significado.</p>
+        </div>
+
+        <div class="reference-box">
+            Aetheris. (s.f.). <em>Neologismos digitales en el español de México: de las redes sociales a la vida cotidiana</em>. https://aetheris.blog/blog/neologismos-digitales-en-el-espanol-de-mexico-de-las-redes-sociales-a-la-vida-cotidiana
+        </div>
+    </section>
+
+    <section id="muletillas">
+        <h3>🗣️ Muletillas Lingüísticas</h3>
+        
+        <p>Hablar de muletilla es hablar de una acción que muy probablemente todos hemos cometido alguna vez en nuestras vidas, casi siempre de manera involuntaria e inconsciente.</p>
+
+        <div class="info-box">
+            <h4>📖 Etimología</h4>
+            <p>La etimología de esta palabra proviene de <strong>muleta</strong>, ya que la finalidad de este recurso lingüístico es servir como apoyatura verbal, que nos ayuda a avanzar cuando nos expresamos o a recuperarnos de bloqueos mentales.</p>
+        </div>
+
+        <h4>Funciones Pragmáticas de las Muletillas</h4>
+        <p>Desde el punto de vista pragmático, las muletillas son expresiones estereotipadas que cumplen, entre otras, las siguientes funciones:</p>
+
+        <ul>
+            <li>Mantener el interés de los interlocutores en lo que el emisor está diciendo</li>
+            <li>Controlar el turno de palabra en un diálogo o conversación</li>
+        </ul>
+
+        <div class="highlight">
+            <h4>Diferencia Importante</h4>
+            <p>Las muletillas no deben confundirse con los <strong>marcadores discursivos</strong>, cuya función es darle a entender a nuestro interlocutor que queremos entablar una comunicación con él o que el canal de la comunicación sigue abierto.</p>
+        </div>
+
+        <div class="warning-box">
+            <h4>⚠️ Impacto en Redes Sociales</h4>
+            <p>El uso excesivo de muletillas en redes sociales puede perjudicar la claridad y credibilidad del mensaje. Estas expresiones de relleno pueden distraer a la audiencia y hacer que el contenido parezca menos claro y profesional.</p>
+        </div>
+
+        <div class="social-media-tip">
+            <h4>💡 Estrategia de Mejora</h4>
+            <p>Para mantener una comunicación efectiva y profesional en redes sociales, es recomendable evitar el uso de muletillas innecesarias y optar por un discurso más claro y directo.</p>
+        </div>
+
+        <div class="reference-box">
+            Kitzalet, P., & Kitzalet, P. (2024, 13 agosto). <em>Qué son las muletillas y por qué deben evitarse</em>. Ediciones Kitzalet - Editorial Digital. https://kitzalet.com/editorial-digital/y-esa-mala-mana-la-muletilla/
+        </div>
+    </section>
+
+    <section id="equipo">
+        <h2>👥 Nuestro Equipo</h2>
+        
+        <div class="team-credits">
+            <h3>LOSSINHIPO</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Equipo de desarrollo del Manual de Lingüística y Comunicación Digital</p>
+            
+            <div class="team-member">
+                <h4>📚 Santiago López Aldaz</h4>
+                <p>Investigación y Contenido</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Responsable de la recopilación, análisis y desarrollo del contenido teórico del manual.</p>
+            </div>
+            
+            <div class="team-member">
+                <h4>💻 Juan Ángel Navarro Fregoso</h4>
+                <p>Programación y Desarrollo Web</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Encargado del diseño, programación e implementación de la plataforma interactiva.</p>
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 2rem;">
+            <h4>🎯 Misión del Proyecto</h4>
+            <p>Proporcionar herramientas prácticas y conocimientos lingüísticos aplicables a la comunicación digital moderna, facilitando una mejor comprensión y uso efectivo del lenguaje en redes sociales y plataformas digitales.</p>
+        </div>
+    </section>
+
+    <section id="referencias">
+        <h2>📖 Referencias Bibliográficas</h2>
+        
+        <div class="info-box">
+            <p><strong>Formato APA 7ª edición</strong></p>
+            <p>A continuación se presentan las referencias bibliográficas utilizadas en este manual:</p>
+        </div>
+
+        <h3>Capítulo 1: El Estilo como Marca Digital</h3>
+        
+        <div class="reference-box">
+            Jácome, G. A. (1976). ¿Qué es la estilística? <em>Revista Sarance</em>, (3), 82-88.
+        </div>
+
+        <h3>Capítulo 2: Errores Comunes y Estrategias de Corrección</h3>
+
+        <h4>Uso de Mayúsculas</h4>
+        <div class="reference-box">
+            Admin. (2024, 28 enero). <em>La importancia de no escribir en mayúsculas en la red: consejos legales para evitar problemas</em>. Información Legal. https://todoinfolegal.com/escribir-en-mayusculas-en-la-red-equivale-a/
+        </div>
+
+        <h4>Signos de Puntuación</h4>
+        <div class="reference-box">
+            Iglesias, L. (2023, 28 octubre). <em>Uso de símbolos de puntuación en redes sociales</em>. Seguidores Online. https://seguidores.online/uso-de-simbolos-de-puntuacion-en-redes-sociales/
+        </div>
+
+        <h4>Abreviaturas y Neologismos</h4>
+        <div class="reference-box">
+            <em>Abreviaturas en redes sociales ¿útiles o confusas?</em> (s.f.). abreviatura.es. https://abreviatura.es/blog/abreviaturas-en-redes-sociales-utiles-o-confusas
+        </div>
+
+        <div class="reference-box">
+            Aetheris. (s.f.). <em>Neologismos digitales en el español de México: de las redes sociales a la vida cotidiana</em>. https://aetheris.blog/blog/neologismos-digitales-en-el-espanol-de-mexico-de-las-redes-sociales-a-la-vida-cotidiana
+        </div>
+
+        <h4>Muletillas Lingüísticas</h4>
+        <div class="reference-box">
+            Kitzalet, P., & Kitzalet, P. (2024, 13 agosto). <em>Qué son las muletillas y por qué deben evitarse</em>. Ediciones Kitzalet - Editorial Digital. https://kitzalet.com/editorial-digital/y-esa-mala-mana-la-muletilla/
+        </div>
+
+        <div class="highlight" style="margin-top: 2rem;">
+            <h4>📝 Nota Final</h4>
+            <p>Este manual está en constante actualización. Las referencias bibliográficas se irán ampliando conforme se agregue nuevo contenido y se profundice en los temas tratados.</p>
+            <p style="margin-top: 1rem;"><strong>Última actualización:</strong> 2025</p>
+        </div>
+    </section>
+</main>
+
+<div class="progress-indicator" id="progressIndicator">0%</div>
+
+<script>
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('active');
+    }
+
+    function closeMenu() {
+        const sidebar = document.getElementById('sidebar');
+        if (window.innerWidth <= 768) {
+            sidebar.classList.remove('active');
+        }
+    }
+
+    document.querySelectorAll('.accordion-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const content = header.nextElementSibling;
+            const isActive = content.classList.contains('active');
+            
+            const accordionGroup = header.closest('.accordion');
+            accordionGroup.querySelectorAll('.accordion-content').forEach(item => {
+                item.classList.remove('active');
+            });
+            accordionGroup.querySelectorAll('.accordion-header').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                content.classList.add('active');
+                header.classList.add('active');
+            }
+        });
+    });
+
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    function updateProgress() {
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight - windowHeight;
+        const scrolled = window.scrollY;
+        const progress = Math.round((scrolled / documentHeight) * 100);
+        
+        document.getElementById('progressIndicator').textContent = progress + '%';
+    }
+
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('nav a');
+        
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.style.fontWeight = 'normal';
+            link.style.color = '';
+            if (link.getAttribute('href') === '#' + current) {
+                link.style.fontWeight = 'bold';
+                link.style.color = 'var(--secondary)';
+            }
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        const sidebar = document.getElementById('sidebar');
+        const menuToggle = document.querySelector('.menu-toggle');
+        
+        if (window.innerWidth <= 768 && 
+            !sidebar.contains(e.target) && 
+            !menuToggle.contains(e.target) &&
+            sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+        }
+    });
+</script>
+
+
+</body>
+</html>
