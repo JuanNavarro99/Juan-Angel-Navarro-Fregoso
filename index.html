@@ -1077,77 +1077,7 @@
                 <h4>Claridad</h4>
                 <p>La cualidad de que seamos claros para ser comprendidos por todos. Un mensaje claro evita malentendidos.</p>
             </div>
-            actividad {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .actividad h3 {
-            color: white;
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            text-align: center;
-            font-size: 1.8rem;
-        }
-
-        .actividad p {
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-
-        .actividad select {
-            width: 100%;
-            padding: 0.8rem;
-            border-radius: 5px;
-            border: none;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            cursor: pointer;
-            background: white;
-            color: var(--text);
-        }
-
-        .actividad button {
-            width: 100%;
-            padding: 1rem;
-            background: #4caf50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .actividad button:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        #resultadoQuiz {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 1rem;
-            border-radius: 5px;
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: bold;
-            min-height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
         </section>
-</section>
-
         <section id="quiz">
             <h2>🎮 Pon a Prueba tus Conocimientos</h2>
 
@@ -1187,7 +1117,7 @@
                 <p>Este quiz te ayuda a reforzar los conceptos clave del manual. Si obtuviste 3/3, ¡excelente! Si no, revisa las secciones correspondientes para fortalecer tu comprensión.</p>
             </div>
         </section>
-function verQuiz() {
+           function verQuiz() {
             let score = 0;
 
             if (document.getElementById("p1").value === "manera") score++;
@@ -1209,6 +1139,7 @@ function verQuiz() {
             
             r.style.color = "white";
         }
+    </section>
         <section id="conclusion">
             <h2>✨ Conclusión</h2>
         <section id="conclusion">
@@ -1313,7 +1244,6 @@ function verQuiz() {
 </main>
 
 <div class="progress-indicator" id="progressIndicator">0%</div>
-
 <script>
     function toggleMenu() {
         const sidebar = document.getElementById('sidebar');
@@ -1361,7 +1291,6 @@ function verQuiz() {
             }
         });
     });
-
     function updateProgress() {
         const windowHeight = window.innerHeight;
         const documentHeight = document.documentElement.scrollHeight - windowHeight;
@@ -1386,7 +1315,6 @@ function verQuiz() {
                 current = section.getAttribute('id');
             }
         });
-        
         navLinks.forEach(link => {
             link.style.fontWeight = 'normal';
             link.style.color = '';
@@ -1396,11 +1324,9 @@ function verQuiz() {
             }
         });
     });
-
     document.addEventListener('click', (e) => {
         const sidebar = document.getElementById('sidebar');
         const menuToggle = document.querySelector('.menu-toggle');
-        
         if (window.innerWidth <= 768 && 
             !sidebar.contains(e.target) && 
             !menuToggle.contains(e.target) &&
@@ -1409,7 +1335,5 @@ function verQuiz() {
         }
     });
 </script>
-
-
 </body>
 </html>
