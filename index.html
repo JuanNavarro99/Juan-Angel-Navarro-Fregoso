@@ -425,6 +425,7 @@
             <li><a href="#muletillas" onclick="closeMenu()">• Muletillas Lingüísticas</a></li>
             <li><a href="#reglas" onclick="closeMenu()">Reglas de Oro</a></li>
             <li><a href="#glosario" onclick="closeMenu()">Glosario</a></li>
+            <li><a href="#quiz" onclick="closeMenu()">Mini Quiz</a></li>
             <li><a href="#conclusion" onclick="closeMenu()">Conclusión</a></li>
             <li><a href="#equipo" onclick="closeMenu()">Equipo</a></li>
             <li><a href="#referencias" onclick="closeMenu()">Referencias</a></li>
@@ -1075,8 +1076,140 @@
                 <h4>Claridad</h4>
                 <p>La cualidad de que seamos claros para ser comprendidos por todos. Un mensaje claro evita malentendidos.</p>
             </div>
-        </section>
+            actividad {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
 
+        .actividad h3 {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .actividad p {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .actividad select {
+            width: 100%;
+            padding: 0.8rem;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            background: white;
+            color: var(--text);
+        }
+
+        .actividad button {
+            width: 100%;
+            padding: 1rem;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .actividad button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        #resultadoQuiz {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        </section>
+</section>
+
+        <section id="quiz">
+            <h2>🎮 Pon a Prueba tus Conocimientos</h2>
+
+            <div class="actividad">
+                <h3>Mini Quiz: Comunicación Digital</h3>
+
+                <p>1. ¿Cuál es la máxima de Grice que pide claridad?</p>
+                <select id="p1">
+                    <option value="">Selecciona una opción</option>
+                    <option value="cantidad">Cantidad</option>
+                    <option value="manera">Manera</option>
+                    <option value="relacion">Relación</option>
+                </select>
+
+                <p>2. Selecciona la oración con estilo correcto:</p>
+                <select id="p2">
+                    <option value="">Selecciona una opción</option>
+                    <option value="mala">"K ase bandaaa jajaaa 😂"</option>
+                    <option value="buena">"Mensaje claro y adecuado a la audiencia."</option>
+                </select>
+
+                <p>3. ¿Cuál es un ejemplo de símbolo según Peirce?</p>
+                <select id="p3">
+                    <option value="">Selecciona una opción</option>
+                    <option value="emoji">😊 (emoticon)</option>
+                    <option value="hashtag"># (hashtag)</option>
+                    <option value="foto">Una foto de un perro</option>
+                </select>
+
+                <button onclick="verQuiz()">Ver resultados</button>
+
+                <p id="resultadoQuiz"></p>
+            </div>
+
+            <div class="info-box" style="margin-top: 2rem;">
+                <h4>💡 Reflexiona sobre tus respuestas</h4>
+                <p>Este quiz te ayuda a reforzar los conceptos clave del manual. Si obtuviste 3/3, ¡excelente! Si no, revisa las secciones correspondientes para fortalecer tu comprensión.</p>
+            </div>
+        </section>
+function verQuiz() {
+            let score = 0;
+
+            if (document.getElementById("p1").value === "manera") score++;
+            if (document.getElementById("p2").value === "buena") score++;
+            if (document.getElementById("p3").value === "hashtag") score++;
+
+            const r = document.getElementById("resultadoQuiz");
+            
+            if (score === 3) {
+                r.innerHTML = "¡Perfecto! 🎉 Obtuviste " + score + " de 3 puntos. ¡Dominaste el contenido!";
+                r.style.background = "rgba(76, 175, 80, 0.3)";
+            } else if (score === 2) {
+                r.innerHTML = "¡Muy bien! 👍 Obtuviste " + score + " de 3 puntos. Casi lo logras.";
+                r.style.background = "rgba(255, 193, 7, 0.3)";
+            } else {
+                r.innerHTML = "Obtuviste " + score + " de 3 puntos. 📚 Repasa el manual para mejorar.";
+                r.style.background = "rgba(244, 67, 54, 0.3)";
+            }
+            
+            r.style.color = "white";
+        }
+        <section id="conclusion">
+            <h2>✨ Conclusión</h2>
         <section id="conclusion">
             <h2>✨ Conclusión</h2>
 
