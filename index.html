@@ -1,47 +1,6 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-    <section id="portada" style="
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
-    padding: 3rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    text-align: center;
-">
-    <img src="logoudg.jpg" alt="Logo UDG" style="width: 120px; margin-bottom: 1rem;">
-    
-    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">
-        Universidad de Guadalajara
-    </h2>
-    <h3 style="font-size: 1.4rem; margin-bottom: 1rem;">
-        Preparatoria Regional de Tala
-    </h3>
-
-    <h1 style="font-size: 2.2rem; margin-bottom: 1rem;">
-        Manual de Lingüística y Comunicación Digital
-    </h1>
-    <h3 style="opacity: 0.9; margin-bottom: 2rem;">
-        Estilo y Corrección en la Era Digital
-    </h3>
-
-    <div style="
-        background: rgba(255,255,255,0.15);
-        padding: 1.5rem;
-        border-radius: 10px;
-        width: 80%;
-        margin: auto;
-    ">
-        <p><strong>Alumno:</strong> Juan Ángel Navarro Fregoso
-        Santiago López Aldaz
-        Mateo Torres Castillo</p>
-        <p><strong>Semestre:</strong> 5º</p>
-        <p><strong>Grupo:</strong> E</p>
-        <p><strong>Materia:</strong> Lingüística y Comunicación Digital</p>
-        <p><strong>Fecha:</strong> 17 de noviembre de 2025</p>
-    </div>
-</section>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual de Lingüística y Comunicación Digital - LOSSINHIPO</title>
@@ -52,354 +11,351 @@
             box-sizing: border-box;
         }
 
-
-    :root {
-        --primary: #2c3e50;
-        --secondary: #3498db;
-        --accent: #e74c3c;
-        --light: #ecf0f1;
-        --dark: #34495e;
-        --text: #2c3e50;
-        --bg: #ffffff;
-    }
-
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        line-height: 1.6;
-        color: var(--text);
-        background: var(--light);
-    }
-
-    header {
-        background: linear-gradient(135deg, var(--primary), var(--dark));
-        color: white;
-        padding: 2rem;
-        text-align: center;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-    }
-
-    header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    header .team-name {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #3498db;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        margin-bottom: 0.5rem;
-    }
-
-    header p {
-        font-size: 1.1rem;
-        opacity: 0.9;
-    }
-
-    nav {
-        position: fixed;
-        left: 0;
-        top: 180px;
-        width: 280px;
-        height: calc(100vh - 180px);
-        background: white;
-        padding: 2rem 1rem;
-        overflow-y: auto;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease;
-    }
-
-    nav h3 {
-        color: var(--primary);
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-    }
-
-    nav ul {
-        list-style: none;
-    }
-
-    nav li {
-        margin-bottom: 0.5rem;
-    }
-
-    nav a {
-        color: var(--text);
-        text-decoration: none;
-        display: block;
-        padding: 0.5rem;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-        font-size: 0.95rem;
-    }
-
-    nav a:hover {
-        background: var(--secondary);
-        color: white;
-        transform: translateX(5px);
-    }
-
-    .menu-toggle {
-        display: none;
-        position: fixed;
-        top: 190px;
-        left: 20px;
-        z-index: 101;
-        background: var(--secondary);
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 1.2rem;
-    }
-
-    main {
-        margin-left: 280px;
-        padding: 2rem;
-        max-width: 900px;
-    }
-
-    section {
-        background: white;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    h2 {
-        color: var(--primary);
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-        border-bottom: 3px solid var(--secondary);
-        padding-bottom: 0.5rem;
-    }
-
-    h3 {
-        color: var(--secondary);
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-
-    h4 {
-        color: var(--dark);
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
-    }
-
-    p {
-        margin-bottom: 1rem;
-        text-align: justify;
-    }
-
-    .highlight {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin: 1.5rem 0;
-        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-    }
-
-    .info-box {
-        background: #e3f2fd;
-        border-left: 4px solid var(--secondary);
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 5px;
-    }
-
-    .example-box {
-        background: #fff3e0;
-        border-left: 4px solid #ff9800;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 5px;
-    }
-
-    .warning-box {
-        background: #ffebee;
-        border-left: 4px solid #f44336;
-        padding: 1rem;
-        margin: 1rem 0;
-        border-radius: 5px;
-    }
-
-    .reference-box {
-        background: #f5f5f5;
-        border-left: 4px solid #4caf50;
-        padding: 1rem;
-        margin: 1.5rem 0;
-        border-radius: 5px;
-        font-size: 0.95rem;
-    }
-
-    .accordion {
-        margin: 1rem 0;
-    }
-
-    .accordion-item {
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        margin-bottom: 0.5rem;
-        overflow: hidden;
-    }
-
-    .accordion-header {
-        background: var(--secondary);
-        color: white;
-        padding: 1rem;
-        cursor: pointer;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: background 0.3s ease;
-    }
-
-    .accordion-header:hover {
-        background: #2980b9;
-    }
-
-    .accordion-header::after {
-        content: '▼';
-        transition: transform 0.3s ease;
-    }
-
-    .accordion-header.active::after {
-        transform: rotate(180deg);
-    }
-
-    .accordion-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease;
-        background: white;
-    }
-
-    .accordion-content.active {
-        max-height: 2000px;
-        padding: 1rem;
-    }
-
-    ul, ol {
-        margin-left: 2rem;
-        margin-bottom: 1rem;
-    }
-
-    li {
-        margin-bottom: 0.5rem;
-    }
-
-    .progress-indicator {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: var(--secondary);
-        color: white;
-        padding: 1rem;
-        border-radius: 50%;
-        width: 60px;
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    .quote {
-        border-left: 4px solid var(--accent);
-        padding-left: 1rem;
-        margin: 1rem 0;
-        font-style: italic;
-        color: #555;
-    }
-
-    .social-media-tip {
-        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        color: white;
-        padding: 1.5rem;
-        border-radius: 10px;
-        margin: 1.5rem 0;
-        box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
-    }
-
-    .social-media-tip h4 {
-        color: white;
-        margin-top: 0;
-    }
-
-    .team-credits {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 2rem;
-        border-radius: 10px;
-        text-align: center;
-        margin: 2rem 0;
-    }
-
-    .team-credits h3 {
-        color: white;
-        margin-bottom: 1rem;
-    }
-
-    .team-member {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 1rem;
-        border-radius: 5px;
-        margin: 0.5rem 0;
-    }
-
-    @media (max-width: 768px) {
-        .menu-toggle {
-            display: block;
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --text: #2c3e50;
+            --bg: #ffffff;
         }
 
-        nav {
-            transform: translateX(-100%);
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light);
         }
 
-        nav.active {
-            transform: translateX(0);
-        }
-
-        main {
-            margin-left: 0;
-            padding: 1rem;
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         header h1 {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
         }
 
         header .team-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #3498db;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            position: fixed;
+            left: 0;
+            top: 180px;
+            width: 280px;
+            height: calc(100vh - 180px);
+            background: white;
+            padding: 2rem 1rem;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        nav h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
             font-size: 1.2rem;
         }
 
-        section {
-            padding: 1.5rem;
+        nav ul {
+            list-style: none;
         }
-    }
-</style>
 
+        nav li {
+            margin-bottom: 0.5rem;
+        }
 
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 190px;
+            left: 20px;
+            z-index: 101;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        main {
+            margin-left: 280px;
+            padding: 2rem;
+            max-width: 900px;
+        }
+
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: var(--secondary);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        h4 {
+            color: var(--dark);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .example-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #ffebee;
+            border-left: 4px solid #f44336;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+
+        .reference-box {
+            background: #f5f5f5;
+            border-left: 4px solid #4caf50;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            border-radius: 5px;
+            font-size: 0.95rem;
+        }
+
+        .accordion {
+            margin: 1rem 0;
+        }
+
+        .accordion-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .accordion-header {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .accordion-header:hover {
+            background: #2980b9;
+        }
+
+        .accordion-header::after {
+            content: '▼';
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active::after {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: white;
+        }
+
+        .accordion-content.active {
+            max-height: 2000px;
+            padding: 1rem;
+        }
+
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: white;
+            padding: 1rem;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .quote {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .social-media-tip {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(245, 87, 108, 0.4);
+        }
+
+        .social-media-tip h4 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .team-credits {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .team-credits h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                transform: translateX(-100%);
+            }
+
+            nav.active {
+                transform: translateX(0);
+            }
+
+            main {
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            header .team-name {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -408,27 +364,66 @@
         <p>Aplicaciones prácticas para la era digital</p>
     </header>
 
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
-<button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav id="sidebar">
+        <h3>Contenido</h3>
+        <ul>
+            <li><a href="#portada" onclick="closeMenu()">Portada</a></li>
+            <li><a href="#introduccion" onclick="closeMenu()">Introducción</a></li>
+            <li><a href="#capitulo1" onclick="closeMenu()">Cap. 1: El Estilo como Marca Digital</a></li>
+            <li><a href="#capitulo2" onclick="closeMenu()">Cap. 2: Errores Comunes</a></li>
+            <li><a href="#mayusculas" onclick="closeMenu()">• Uso de Mayúsculas</a></li>
+            <li><a href="#puntuacion" onclick="closeMenu()">• Signos de Puntuación</a></li>
+            <li><a href="#abreviaturas" onclick="closeMenu()">• Abreviaturas y Neologismos</a></li>
+            <li><a href="#muletillas" onclick="closeMenu()">• Muletillas Lingüísticas</a></li>
+            <li><a href="#equipo" onclick="closeMenu()">Equipo</a></li>
+            <li><a href="#referencias" onclick="closeMenu()">Referencias</a></li>
+        </ul>
+    </nav>
 
-<nav id="sidebar">
-    <h3>Contenido</h3>
-    <ul>
-        <li><a href="#introduccion" onclick="closeMenu()">Introducción</a></li>
-        <li><a href="#capitulo1" onclick="closeMenu()">Cap. 1: El Estilo como Marca Digital</a></li>
-        <li><a href="#capitulo2" onclick="closeMenu()">Cap. 2: Errores Comunes</a></li>
-        <li><a href="#mayusculas" onclick="closeMenu()">• Uso de Mayúsculas</a></li>
-        <li><a href="#puntuacion" onclick="closeMenu()">• Signos de Puntuación</a></li>
-        <li><a href="#abreviaturas" onclick="closeMenu()">• Abreviaturas y Neologismos</a></li>
-        <li><a href="#muletillas" onclick="closeMenu()">• Muletillas Lingüísticas</a></li>
-        <li><a href="#equipo" onclick="closeMenu()">Equipo</a></li>
-        <li><a href="#referencias" onclick="closeMenu()">Referencias</a></li>
-    </ul>
-</nav>
+    <main>
+        <section id="portada" style="
+            background: linear-gradient(135deg, #1f2d3a, #2c3e50);
+            color: #ffffff;
+            padding: 3rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            text-align: center;
+        ">
+            <h2 style="font-size: 2rem; margin-bottom: 0.5rem; color: #ffffff;">
+                Universidad de Guadalajara
+            </h2>
+            <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #aadaff;">
+                Preparatoria Regional de Tala
+            </h3>
 
-<main>
-    <section id="introduccion">
-        <h2>🌐 Introducción</h2>
+            <h1 style="font-size: 2.2rem; margin-bottom: 1rem; color: #ffffff;">
+                Manual de Lingüística y Comunicación Digital
+            </h1>
+            <h3 style="opacity: 0.9; margin-bottom: 2rem; color: #cfe9ff;">
+                Estilo y Corrección en la Era Digital
+            </h3>
+
+            <div style="
+                background: rgba(255,255,255,0.12);
+                padding: 1.5rem;
+                border-radius: 10px;
+                width: 80%;
+                margin: auto;
+                color: #ffffff;
+            ">
+                <img src="logoudg.jpg" alt="Logo UDG" style="width: 120px; margin-bottom: 1rem;">
+                <p><strong>Alumnos:</strong> Juan Ángel Navarro Fregoso, Santiago López Aldaz, Mateo Torres Castillo</p>
+                <p><strong>Semestre:</strong> 5º</p>
+                <p><strong>Grupo:</strong> E</p>
+                <p><strong>Materia:</strong> Lingüística y Comunicación Digital</p>
+                <p><strong>Fecha:</strong> 17 de noviembre de 2025</p>
+            </div>
+        </section>
+
+        <section id="introduccion">
+            <h2>🌐 Introducción</h2>
         
         <div class="highlight">
             <h3>Sobre este Manual</h3>
