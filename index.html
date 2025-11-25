@@ -400,6 +400,28 @@
                 padding: 1.5rem;
             }
         }
+                   function verQuiz() {
+            let score = 0;
+
+            if (document.getElementById("p1").value === "manera") score++;
+            if (document.getElementById("p2").value === "buena") score++;
+            if (document.getElementById("p3").value === "hashtag") score++;
+
+            const r = document.getElementById("resultadoQuiz");
+            
+            if (score === 3) {
+                r.innerHTML = "¡Perfecto! 🎉 Obtuviste " + score + " de 3 puntos. ¡Dominaste el contenido!";
+                r.style.background = "rgba(76, 175, 80, 0.3)";
+            } else if (score === 2) {
+                r.innerHTML = "¡Muy bien! 👍 Obtuviste " + score + " de 3 puntos. Casi lo logras.";
+                r.style.background = "rgba(255, 193, 7, 0.3)";
+            } else {
+                r.innerHTML = "Obtuviste " + score + " de 3 puntos. 📚 Repasa el manual para mejorar.";
+                r.style.background = "rgba(244, 67, 54, 0.3)";
+            }
+            
+            r.style.color = "white";
+        }
     </style>
 </head>
 <body>
@@ -1117,30 +1139,6 @@
                 <p>Este quiz te ayuda a reforzar los conceptos clave del manual. Si obtuviste 3/3, ¡excelente! Si no, revisa las secciones correspondientes para fortalecer tu comprensión.</p>
             </div>
         </section>
-        <section>
-           function verQuiz() {
-            let score = 0;
-
-            if (document.getElementById("p1").value === "manera") score++;
-            if (document.getElementById("p2").value === "buena") score++;
-            if (document.getElementById("p3").value === "hashtag") score++;
-
-            const r = document.getElementById("resultadoQuiz");
-            
-            if (score === 3) {
-                r.innerHTML = "¡Perfecto! 🎉 Obtuviste " + score + " de 3 puntos. ¡Dominaste el contenido!";
-                r.style.background = "rgba(76, 175, 80, 0.3)";
-            } else if (score === 2) {
-                r.innerHTML = "¡Muy bien! 👍 Obtuviste " + score + " de 3 puntos. Casi lo logras.";
-                r.style.background = "rgba(255, 193, 7, 0.3)";
-            } else {
-                r.innerHTML = "Obtuviste " + score + " de 3 puntos. 📚 Repasa el manual para mejorar.";
-                r.style.background = "rgba(244, 67, 54, 0.3)";
-            }
-            
-            r.style.color = "white";
-        }
-    </section>
         <section id="conclusion">
             <h2>✨ Conclusión</h2>
 
